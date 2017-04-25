@@ -12,6 +12,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -142,6 +143,7 @@ public class MainActivity extends AppCompatActivity {
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
             try {
+                Log.d("CHANGES MADE","");
                 JSONObject jsonObject = new JSONObject(s);
                 JSONArray rs = jsonObject.getJSONArray("nearby_restaurants");
                 for (int i = 0; i < rs.length(); i++) {
